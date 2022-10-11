@@ -18,18 +18,16 @@ class Trainer:
         """
             训练 Trainer 模型的方法
 
-            x: 输入数据
-
-            t: 监督数据
-
-            max_epoch: 学习的 epoch 数
-
-            batch_size: 批数据的大小
-
-            eval_interval: 若干 epoch 后输出 loss 的间隔
-
-            max_grad: 梯度范数最大值，若超出则缩放梯度矩阵
+            :param x: 输入数据
+            :param t: 监督数据
+            :param max_epoch: 学习的 epoch 数
+            :param batch_size: 批数据的大小
+            :param eval_interval: 若干 epoch 后输出 loss 的间隔
+            :param max_grad: 梯度范数最大值，若超出则缩放梯度矩阵
             """
+        """
+        
+        """
         data_size = len(x)
         max_iters = data_size // batch_size
         self.eval_interval = eval_interval
@@ -76,7 +74,6 @@ class Trainer:
         plt.xlabel("iterations (x" + str(self.eval_interval) + ")")
         plt.ylabel("loss")
         plt.show()
-
 
 
 def remove_duplicate(params, grads):

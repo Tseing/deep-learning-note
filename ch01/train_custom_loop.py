@@ -33,8 +33,8 @@ for epoch in range(max_epoch):
 
     # 按批取数据
     for iters in range(max_iters):
-        batch_x = x[iters*batch_size:(iters+1)*batch_size]
-        batch_t = t[iters*batch_size:(iters+1)*batch_size]
+        batch_x = x[iters * batch_size:(iters + 1) * batch_size]
+        batch_t = t[iters * batch_size:(iters + 1) * batch_size]
 
         loss = model.forward(batch_x, batch_t)
         model.backward()
@@ -47,7 +47,7 @@ for epoch in range(max_epoch):
         if (iters+1) % 10 == 0:
             avg_loss = total_loss / loss_count
             print("| epoch %d | iter %d / %d | loss %.2f"
-                  % (epoch+1, iters+1, max_iters, avg_loss))
+                  % (epoch + 1, iters + 1, max_iters, avg_loss))
             loss_list.append(avg_loss)
             total_loss, loss_count = 0, 0
 
